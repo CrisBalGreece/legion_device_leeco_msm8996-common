@@ -374,6 +374,14 @@ PRODUCT_PACKAGES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     device/leeco/msm8996-common
+	
+# Soong 12
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/data-ipa-cfg-mgr \
+    hardware/qcom-caf/msm8998/audio \
+    hardware/qcom-caf/msm8998/display \
+    hardware/qcom-caf/msm8998/media \
+    hardware/qcom-caf/common
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
