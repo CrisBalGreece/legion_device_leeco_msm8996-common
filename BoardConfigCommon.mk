@@ -191,12 +191,15 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 VENDOR_SECURITY_PATCH := 2016-10-01
 
 # SELinux
-SELINUX_IGNORE_NEVERALLOWS := true
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
+#SELINUX_IGNORE_NEVERALLOWS := true
+#include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
+#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
+
+# Minimal Sepolicy
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-minimal
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
