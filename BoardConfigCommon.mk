@@ -191,7 +191,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 VENDOR_SECURITY_PATCH := 2016-10-01
 
 # SELinux
-#SELINUX_IGNORE_NEVERALLOWS := true
+SELINUX_IGNORE_NEVERALLOWS := true
 #include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
 #BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
