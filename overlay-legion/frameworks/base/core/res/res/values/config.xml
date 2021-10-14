@@ -139,14 +139,14 @@
          to have a confirmed way to dismiss the keyboard when desired. -->
     <bool name="config_automotiveHideNavBarForKeyboard">true</bool>
 	
-	<!-- Shows the required view for in-display fingerprint -->
-    <bool name="config_supportsInDisplayFingerprint">false</bool>
+	<!-- Shows the required view for in-display fingerprint
+    <bool name="config_supportsInDisplayFingerprint">false</bool> -->
 	
-    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
-    <integer name="config_screenRecorderMaxFramerate">30</integer>
+    <!-- If not zero, limits the internal screen recorder's framerate to the set value.
+    <integer name="config_screenRecorderMaxFramerate">30</integer> -->
 	
     <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
-         screenshot chord -->
-   <integer name="config_screenshotChordKeyTimeout">0</integer>
+         screenshot chord
+   <integer name="config_screenshotChordKeyTimeout">0</integer> -->
 
 </resources>
