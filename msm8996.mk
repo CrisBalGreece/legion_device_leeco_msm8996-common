@@ -193,8 +193,8 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    DeviceDoze
+#PRODUCT_PACKAGES += \
+    #DeviceDoze
 
 # DRM
 PRODUCT_PACKAGES += \
