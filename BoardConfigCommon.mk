@@ -62,7 +62,9 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/leeco/msm8996
-
+TARGET_KERNEL_CLANG_CUSTOM := true
+TARGET_KERNEL_CLANG_VERSION := r416183b
+TARGET_KERNEL_VERSION := 3.18
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # QCOM hardware
@@ -190,16 +192,15 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # Security patch level - (zl1 EUI ROM CN 20s)
 VENDOR_SECURITY_PATCH := 2016-10-01
 
-# SELinux S
-SELINUX_IGNORE_NEVERALLOWS := true
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-s/vendor
+# SELinux
+#include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 #BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 #BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
 #BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 
-# Minimal Sepolicy
-#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-minimal
+# Sepolicy S
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-s
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
