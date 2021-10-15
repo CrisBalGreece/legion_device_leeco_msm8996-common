@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData.system \
     libtinyxml \
-    libtinyxml.vendor
+    libtinyxml.vendor \
     libvulkan
 
 # Doze mode
@@ -470,7 +470,7 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
 
 # In the name of S
 PRODUCT_PACKAGES += \
-    android.frameworks.automotive.display@1.0.vendor \   
+    android.frameworks.automotive.display@1.0.vendor \
     android.hardware.atrace@1.0.vendor \
     android.hardware.audio.common@4.0.vendor \
     android.hardware.audio.common@5.0.vendor \
