@@ -29,5 +29,6 @@
 
 # Delete data/system/storage.xml
 rm -rf /data/system/storage.xml
+rm -rf /system/etc/init/bpfloader.rc
 touch /data/system/storage.xml
 chattr +i /data/system/storage.xml
