@@ -181,6 +181,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.allocator@3.0-impl \
     android.hardware.graphics.allocator@4.0-impl \
+    android.hardware.graphics.allocator@2.0.vendor \
+    android.hardware.graphics.allocator@3.0.vendor \
+    android.hardware.graphics.allocator@4.0.vendor \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
@@ -320,7 +323,10 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.0-service \
+    android.hardware.power-service-qti \
+    android.hardware.power.stats@1.0-service.mock \
+    vendor.qti.hardware.perf@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -374,6 +380,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     libprotobuf-cpp-full \
     librmnetctl \
+    librmnetctl.vendor \
     libxml2
 
 # Soong
@@ -405,10 +412,12 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
+    qti-telephony-hidl-wrapper-prd \
+    qti_telephony_hidl_wrapper_prd.xml \
     telephony-ext
 
-#PRODUCT_BOOT_JARS += \
-    #telephony-ext
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Tethering
 PRODUCT_PACKAGES += \
@@ -429,8 +438,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic \
-    com.android.future.usb.accessory
+    android.hardware.usb@1.0-service
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -548,6 +556,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1.vendor \
     android.hardware.gnss@2.0.vendor \
     android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss@3.0.vendor \
     android.hardware.graphics.common-V1-ndk_platform.vendor \
     android.hardware.graphics.composer@2.1.vendor \
     android.hardware.graphics.composer@2.2.vendor \
@@ -573,6 +582,7 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
     android.hardware.oemlock@1.0.vendor \
     android.hardware.power.stats@1.0.vendor \
+    android.hardware.power@1.2 \
     android.hardware.power@1.0.vendor \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor \
@@ -580,6 +590,8 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0.vendor \
     android.hardware.radio.config@1.1.vendor \
     android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio@1.5.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.0.vendor \
     android.hardware.radio@1.1.vendor \
@@ -631,10 +643,13 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.3.vendor \
     android.hidl.allocator@1.0.vendor \
     android.hidl.memory.block@1.0.vendor \
+    android.system.net.netd@1.1 \
     android.system.net.netd@1.0.vendor \
     android.system.net.netd@1.1.vendor \
     android.system.wifi.keystore@1.0.vendor \
+    bt_stack.conf \
     libadf.vendor \
+    libjson.vendor
     libstdc++.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
