@@ -650,7 +650,7 @@ PRODUCT_PACKAGES += \
     android.system.wifi.keystore@1.0.vendor \
     bt_stack.conf \
     libadf.vendor \
-    libjson.vendor
+    libjson.vendor \
     libstdc++.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 

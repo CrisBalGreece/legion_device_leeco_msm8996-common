@@ -7,7 +7,7 @@ type sysfs_torch, fs_type, sysfs_type;
 type thermal_data_file, file_type, data_file_type;
 
 #Sepolicy-s
-type adsprpcd_file, file_type;
+type dsp_file, file_type;
 type bt_firmware_file, file_type;
 type firmware_file, file_type;
 type persist_file, file_type;
