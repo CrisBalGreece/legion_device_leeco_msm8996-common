@@ -32,6 +32,26 @@ ifeq ($(TARGET_DEVICE), x2)
 LOCAL_CFLAGS += -DDEVICE_X2
 endif
 
+#HAL 1.0 source
+
+ifeq ($(TARGET_SUPPORT_HAL1),false)
+LOCAL_CFLAGS += -DQCAMERA_HAL3_SUPPORT
+else
+LOCAL_CFLAGS += -DQCAMERA_HAL1_SUPPORT
+LOCAL_SRC_FILES += \
+        HAL/QCamera2HWI.cpp \
+        HAL/QCameraMuxer.cpp \
+        HAL/QCameraMem.cpp \
+        HAL/QCameraStateMachine.cpp \
+        HAL/QCameraChannel.cpp \
+        HAL/QCameraStream.cpp \
+        HAL/QCameraPostProc.cpp \
+        HAL/QCamera2HWICallbacks.cpp \
+        HAL/QCameraParameters.cpp \
+        HAL/QCameraParametersIntf.cpp \
+        HAL/QCameraThermalAdapter.cpp
+endif
+
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
@@ -50,6 +70,9 @@ USE_DISPLAY_SERVICE := true
 LOCAL_CFLAGS += -DUSE_DISPLAY_SERVICE
 endif
 
+#HAL 1.0 Flags
+LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON -DHAL3 -DQCAMERA_REDEFINE_LOG
+
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../mm-image-codec/qexif \
         $(LOCAL_PATH)/../mm-image-codec/qomx_core \
@@ -60,6 +83,10 @@ LOCAL_C_INCLUDES := \
         $(call project-path-for,qcom-media)/libstagefrighthw \
         $(call project-path-for,qcom-media)/mm-core/inc \
         $(TARGET_OUT_HEADERS)/mm-camera-lib/cp/prebuilt
+
+#HAL 1.0 Include paths
+LOCAL_C_INCLUDES += \
+        $(LOCAL_PATH)/HAL
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 ifeq ($(TARGET_TS_MAKEUP),true)
