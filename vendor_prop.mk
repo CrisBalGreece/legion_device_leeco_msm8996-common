@@ -42,7 +42,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.btconfig.dev=/dev/ttyHS0 \
     ro.btconfig.if=uart \
     ro.btconfig.vendor=qcom \
-    vendor.qcom.bluetooth.soc=rome
+    vendor.qcom.bluetooth.soc=rome \
+    persist.bluetooth.a2dp_offload.disabled=true
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -106,7 +107,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
     vendor.video.disable.ubwc=1 \
-    debug.hwui.renderer=opengl
+    debug.hwui.renderer=skiagl
 
 # Graphics (OpenGLES)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -122,8 +123,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qti.telephony.vt_cam_interface=1
 
 # IORAP
-#PRODUCT_PRODUCT_PROPERTIES += \
-    #ro.iorapd.enable=true
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.iorapd.enable=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -160,8 +161,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.use_old_mnc_mcc_format=true \
-    telephony.lteOnCdmaDevice=1 \
-    ro.kernel.ebpf.supported=false
+    telephony.lteOnCdmaDevice=1
 
 # SMD sensor
 PRODUCT_PROPERTY_OVERRIDES += \
