@@ -122,8 +122,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qti.telephony.vt_cam_interface=1
 
 # IORAP
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.iorapd.enable=true
+#PRODUCT_PRODUCT_PROPERTIES += \
+    #ro.iorapd.enable=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -157,10 +157,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.sib16_support=1 \
     ril.subscription.types=NV,RUIM \
-    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.use_old_mnc_mcc_format=true \
-    telephony.lteOnCdmaDevice=1
+    telephony.lteOnCdmaDevice=1 \
+    ro.kernel.ebpf.supported=false
 
 # SMD sensor
 PRODUCT_PROPERTY_OVERRIDES += \

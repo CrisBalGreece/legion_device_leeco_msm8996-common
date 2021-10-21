@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
+    android.hardware.bluetooth@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -208,7 +208,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl:64 \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.1.vendor
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -227,6 +228,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-impl-qti:64 \
     android.hardware.gnss@2.0-service-qti \
+    android.hardware.gnss@1.1.vendor \
     libbatching \
     libgeofencing \
     libgnss \
@@ -257,8 +259,8 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor
 
 # IORAPD
-PRODUCT_PACKAGES += \
-    iorap-app-startup-runner	
+#PRODUCT_PACKAGES += \
+    #iorap-app-startup-runner	
 	
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -302,9 +304,7 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    libandroid_net \
-    netutils-wrapper-1.0
+    android.system.net.netd@1.1.vendor
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -379,6 +379,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.radio.config@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.secure_element@1.0.vendor \
     libprotobuf-cpp-full \
     librmnetctl \
     librmnetctl.vendor \
@@ -429,9 +433,14 @@ PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
 # Thermal
+#PRODUCT_PACKAGES += \
+    #android.hardware.thermal@1.0-impl:64 \
+    #android.hardware.thermal@1.0-service \
+    thermal.msm8996
+
+# Thermal s
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl:64 \
-    android.hardware.thermal@1.0-service \
+    android.hardware.thermal@2.0.vendor \
     thermal.msm8996
 
 PRODUCT_COPY_FILES += \
@@ -501,11 +510,8 @@ PRODUCT_PACKAGES += \
     android.hardware.automotive.sv@1.0.vendor \
     android.hardware.automotive.vehicle@2.0.vendor \
     android.hardware.biometrics.face@1.0.vendor \
-    android.hardware.biometrics.fingerprint@2.1.vendor \
-    android.hardware.biometrics.fingerprint@2.2.vendor \
     android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth.audio@2.0.vendor \
-    android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.boot@1.0.vendor \
     android.hardware.boot@1.1.vendor \
@@ -588,19 +594,15 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor \
     android.hardware.power@1.3.vendor \
-    android.hardware.radio.config@1.0.vendor \
     android.hardware.radio.config@1.1.vendor \
     android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.0.vendor \
     android.hardware.radio@1.1.vendor \
     android.hardware.radio@1.2.vendor \
     android.hardware.radio@1.3.vendor \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
-    android.hardware.secure_element@1.0.vendor \
     android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor \
     android.hardware.sers@1.0.vendor \
