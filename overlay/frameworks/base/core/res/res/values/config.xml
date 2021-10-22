@@ -334,6 +334,7 @@
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system_ext/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
+        <item>"/system/bin/libsurfaceflinger.so"</item>
     </string-array>
 
     <!-- Should the pinner service pin the Home application? -->
@@ -392,71 +393,6 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
-    
-    <!-- Hardware keys present on the device, stored as a bit field.
-         This integer should equal the sum of the corresponding value for each
-         of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Assistant (search)
-            16 - App switch
-            32 - Camera
-            64 - Volume rocker
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">83</integer>
-    
-    <!-- Button brightness -->
-    <dimen name="config_buttonBrightnessSettingDefaultFloat">0.20</dimen>
-
-    <!-- Control whether the always on display mode is available. This should only be enabled on
-         devices where the display has been tuned to be power efficient in DOZE and/or DOZE_SUSPEND
-         states. -->
-    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
-
-    <!-- Control whether the always on display mode is enabled by default. This value will be used
-         during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-
-    <!-- Control the behavior when the user long presses the app switch button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
-         This needs to match the enums in
-         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
-    -->
-    <integer name="config_longPressOnAppSwitchBehavior">1</integer>
-	
-	<!-- Whether or not to hide the navigation bar when the soft keyboard is visible in order to
-         create additional screen real estate outside beyond the keyboard. Note that the user needs
-         to have a confirmed way to dismiss the keyboard when desired. -->
-    <bool name="config_automotiveHideNavBarForKeyboard">true</bool>
-	
-	<!-- Shows the required view for in-display fingerprint -->
-    <bool name="config_supportsInDisplayFingerprint">false</bool>
-	
-    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
-    <integer name="config_screenRecorderMaxFramerate">30</integer>
-	
-	<!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <integer name="config_smartChargingBatteryLevel">90</integer>
-    <integer name="config_smartChargingBatteryResumeLevel">30</integer>
-    <bool name="config_smart_battery_available">true</bool>
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">0</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
-	
-    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
-         screenshot chord -->
-   <integer name="config_screenshotChordKeyTimeout">0</integer>
    
    <!-- The component name, flattened to a string, for the default autofill service
          to  enabled for an user. This service must be trusted, as it can be activated
