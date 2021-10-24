@@ -3,7 +3,7 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /fsg(/.*)?               u:object_r:fsg_file:s0
 /dsp(/.*)?               u:object_r:dsp_file:s0
-/persist(/.*)?           u:object_r:persist_file:s0
+/persist(/.*)?           u:object_r:mnt_vendor_file:s0
 
 # devices
 /dev/block/platform/soc/624000\.ufshc/by-name/devinfo                    u:object_r:devinfo_block_device:s0
