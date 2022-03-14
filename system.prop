@@ -1,0 +1,5 @@
+#ro.kernel.ebpf.supported=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+# Maintainer
+ro.octavi.maintainer=CrisBalGreece
+

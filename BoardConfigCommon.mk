@@ -21,6 +21,9 @@ TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := leeco
 
+# APEX image
+#DEXPREOPT_GENERATE_APEX_IMAGE := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
@@ -32,6 +35,14 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+SKIP_ABI_CHECKS := true
+
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/bt_firmware:/bt_firmware \
+    /mnt/vendor/persist:/persist
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -65,6 +76,7 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/leeco/msm8996
 TARGET_KERNEL_CLANG_CUSTOM := true
 TARGET_KERNEL_CLANG_VERSION := r416183b
+TARGET_KERNEL_VERSION := 3.18
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # QCOM hardware
@@ -150,8 +162,8 @@ DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_leeco_msm8996
-TARGET_RECOVERY_DEVICE_MODULES := libinit_leeco_msm8996
+#TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_leeco_msm8996
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_leeco_msm8996
 
 # Partitions (/proc/partitions * 2 * BLOCK_SIZE (512) = size in bytes)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -173,10 +185,12 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 TARGET_USES_MKE2FS := true
 
 # Power
+TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
 TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_leeco
@@ -187,7 +201,7 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 
 # RIL
-#TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Security patch level - (zl1 EUI ROM CN 20s)
 VENDOR_SECURITY_PATCH := 2016-10-01
@@ -195,11 +209,12 @@ VENDOR_SECURITY_PATCH := 2016-10-01
 # SELinux
 #include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 #BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
-#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
+#SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/public
+#SYSTEM_EXT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 
 # Sepolicy S
 SELINUX_IGNORE_NEVERALLOWS := true
+include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-s
 
 # Treble

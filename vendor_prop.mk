@@ -33,8 +33,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.voice.path.for.pcm.voip=true
 
 # Bpf bypass
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.ebpf.supported=false
+#PRODUCT_PROPERTY_OVERRIDES += \
+    #ro.kernel.ebpf.supported=false
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -63,6 +63,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
+    
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=16m \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -141,6 +150,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
+    persist.sys.fflag.override.settings_provider_model=false \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
     persist.radio.apm_sim_not_pwdn=1 \
@@ -191,3 +201,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
